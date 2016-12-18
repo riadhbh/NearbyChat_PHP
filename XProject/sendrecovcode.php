@@ -23,7 +23,7 @@ if( $count["count(*)"]>0 ) {
 
 $code=generateRandomString(8);
 
-/*
+
 $mail = new PHPMailer(true); // the true param means it will throw exceptions on errors, which we need to catch
 
 $mail->IsSMTP(); // telling the class to use SMTP
@@ -36,12 +36,12 @@ try {
 
   $mail->Port       = 465;                    // set the SMTP port for the GMAIL server
   $mail->Username   = "xproject.team@yandex.com"; // SMTP account username
-  $mail->Password   = "qwerty@156";        // SMTP account password
+  $mail->Password   = "azerty@156";        // SMTP account password
   
   $mail->From = "xproject.team@yandex.com";
   $mail->Username = "xproject.team@yandex.com";
   $mail->AddAddress( $email, '');
-  $mail->SetFrom('xproject.team@yandex.com', 'Hotel Bookings Team');
+  $mail->SetFrom('xproject.team@yandex.com', 'Xproject Bookings Team');
 
   $mail->Subject = 'Xproject app password reset code';
   $mail->Body="Hello
@@ -51,15 +51,15 @@ try {
   To continue the password reset process, please use this reset code ".$code;
 
   $mail->Send();
- */
+ 
   echo "Code Sent successfully\n";
- /* 
+ 
 } catch (phpmailerException $e) {
   echo $e->errorMessage(); //Pretty error messages from PHPMailer
 } catch (Exception $e) {
   echo $e->getMessage(); //Boring error messages from anything else!
 }
-*/
+
 $dateTimeVariable = date("Y-m-d H:i:s");
  $sql_query = "select count(*) from recoverycodes where mail like '$email';";  
  $result = mysqli_query($conn,$sql_query);  
